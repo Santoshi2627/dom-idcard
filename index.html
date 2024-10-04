@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        /* background-color: aqua; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        height: 50vh;
+        width: 50vh;
+        margin-left: 10%;
+        margin-top: 10%;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <label for="ip1">Name:</label>
+      <input type="text" id="ip1" required /><br /><br />
+      <label for="ip2">Role:</label>
+      <input type="text" id="ip2" required /><br /><br />
+      <label for="ip3">Number:</label>
+      <input type="tel" id="ip3" pattern="[0-9]{10}" required /><br /><br />
+      <label for="ip4">Blood-group:</label>
+      <input type="text" id="ip4" required /><br /><br />
+      <input type="submit" />
+      <input type="reset" />
+    </form>
+    <div id="div1">
+      <img />
+      <p></p>
+      <p></p>
+      <p></p>
+      <p></p>
+    </div>
+    <script>
+      let form = document.getElementsByTagName("form");
+      form[0].addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        let div = document.getElementById("div1");
+        div.style.border = "2px solid black";
+        div.style.borderRadius = "50px";
+        div.style.backgroundColor = "aqua";
+
+        let img = document.getElementsByTagName("img")[0];
+        img.setAttribute(
+          "src",
+          "https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp"
+        );
+        img.style.height = "50px";
+        img.style.width = "50px";
+        img.style.borderRadius = "30%";
+        // img.style.display="block";
+        img.style.PaddingBottom = "10px";
+        div.prepend(img);
+        let p = document.getElementsByTagName("p");
+        p[0].innerHTML = "Name:" + ip1.value;
+        // p[0].style.color="red";
+        p[1].innerHTML = "Role:" + ip2.value;
+        p[2].innerHTML = "Number:" + ip3.value;
+        p[3].innerHTML = "Blood-group:" + ip4.value;
+      });
+    </script>
+  </body>
+</html>
